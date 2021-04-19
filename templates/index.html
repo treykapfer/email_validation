@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width='device-width', initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Email Validator</h1>
+    <br>
+    <form action="/post_email" method="POST">
+        {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+        {% if messages %}                            <!-- check if there are any messages -->
+                {% for message in messages %}            <!-- loop through the messages -->
+                    <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <label for="email">Enter Your Email: </label>
+        <input type="text" id="email" name="email">
+        <br>
+        <input type="submit" value="Submit">
+        <br>
+        {% for email in emails %}
+            {{ email['email']}}
+            <br>
+        {% endfor %}
+    </form>
+</body>
+</html>
