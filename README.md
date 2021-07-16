@@ -1,3 +1,3 @@
 # email_validation
 Flask/SQL email validation.
-Leaving this public because someone branched it.
+Leaving this public bc others had interest in it.
